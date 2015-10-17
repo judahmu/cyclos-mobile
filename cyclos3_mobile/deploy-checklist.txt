@@ -1,0 +1,52 @@
+/*
+    This file is part of Cyclos (www.cyclos.org).
+    A project of the Social Trade Organisation (www.socialtrade.org).
+
+    Cyclos is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    Cyclos is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Cyclos; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+
+ */
+ 
+Android
+1- Verify version in properties.js
+2- Compile CyclosMobile.gwt.xml
+3- Run ant "deploy-android"
+4- Verify version and versionCode in manifest.xml in cyclos3_mobile_android project
+5- Test the application in emulator
+6- Export signed application
+
+IOS
+1- Verify version in properties.js
+2- Compile CyclosMobile.gwt.xml
+3- Run ant "build-ios"
+4- Replace files in <IOS Cyclos Project>/www
+5- Check version in project settings
+6- Set correct certificate in project settings
+7- Perform clean/build
+8- Test the application in emulator
+9- Perform clean/archive
+10- Export signed application
+
+BlackBerry
+1- Split the application in the following languages editing CyclosMobile.gwt.xml
+* en,es,pt,nl,de,cs
+* en,zh,ja,el,it,fr,ru 
+2- Verify version in properties.js
+3- Compile CyclosMobile.gwt.xml
+4- Run ant "build-blackberry"
+5- Remove IFRAME tag from index.html
+7- Replace files in <BlackBerry Cyclos Project>/www
+8- Verify version in <BlackBerry Cyclos Project>/config.xml
+9- Test the application in emulator
+10- Export signed application

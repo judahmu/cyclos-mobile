@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to="cyclos">
+	<inherits name="com.google.gwt.user.User" />
+	<inherits name='com.googlecode.gwtphonegap.PhoneGap' />
+	<inherits name="com.google.gwt.i18n.CldrLocales"/>
+	<source path="client" />
+	<entry-point class="nl.strohalm.cyclos.mobile.client.CyclosMobile" />
+	<replace-with class="nl.strohalm.cyclos.mobile.client.services.AccessServiceImpl">
+		<when-type-is class="nl.strohalm.cyclos.mobile.client.services.AccessService"/>
+	</replace-with>
+	<replace-with class="nl.strohalm.cyclos.mobile.client.services.AccountServiceImpl">
+	    <when-type-is class="nl.strohalm.cyclos.mobile.client.services.AccountService"/>
+	</replace-with>
+	<replace-with class="nl.strohalm.cyclos.mobile.client.services.ContactServiceImpl">
+	    <when-type-is class="nl.strohalm.cyclos.mobile.client.services.ContactService"/>
+	</replace-with>
+	<replace-with class="nl.strohalm.cyclos.mobile.client.services.ConfigurationServiceImpl">
+		<when-type-is class="nl.strohalm.cyclos.mobile.client.services.ConfigurationService"/>
+	</replace-with>
+	<replace-with class="nl.strohalm.cyclos.mobile.client.services.GeneralServiceImpl">
+		<when-type-is class="nl.strohalm.cyclos.mobile.client.services.GeneralService"/>
+	</replace-with>
+	<replace-with class="nl.strohalm.cyclos.mobile.client.services.PaymentServiceImpl">
+		<when-type-is class="nl.strohalm.cyclos.mobile.client.services.PaymentService"/>
+	</replace-with>	
+	<replace-with class="nl.strohalm.cyclos.mobile.client.services.UserServiceImpl">
+		<when-type-is class="nl.strohalm.cyclos.mobile.client.services.UserService"/>
+	</replace-with>	
+	<extend-property name="locale" values="en,nl,es,pt,it,de,fr,ru,el,zh,ja,cs"/>
+   	<set-property-fallback name="locale" value="en"/>
+   	<set-property name="locale" value="en,nl,es,pt,it,de,fr,ru,el,zh,ja,cs"/>			
+	<set-property name="gwt.logging.popupHandler" value="DISABLED" />
+	<set-property name="gwt.logging.enabled" value="FALSE" />
+	<set-property name="user.agent" value="safari" />	
+	<set-property name="phonegap.env" value="yes" />		
+	<add-linker name="xsiframe" />
+</module>

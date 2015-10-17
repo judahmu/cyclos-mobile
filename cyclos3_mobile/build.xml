@@ -1,0 +1,110 @@
+<project name="cyclos3_mobile" basedir=".">
+    
+    <!-- Build Android application -->
+	<target name="build-android">    
+	   <delete>
+   			<fileset dir="deploy/android">
+      			<include name="**/*"/>
+   			</fileset>
+		</delete>    
+	   	<mkdir dir="deploy/android/www/css" />
+	    <mkdir dir="deploy/android/www/cyclos" />
+	    <mkdir dir="deploy/android/www/images" />
+	    <mkdir dir="deploy/android/www/js" />	    
+	    <copy todir="deploy/android/www/css" >  
+        	<fileset dir="war/css" excludes="**/*.svn"/>  
+        </copy>
+        <copy todir="deploy/android/www/cyclos" >  
+        	<fileset dir="war/cyclos" excludes="**/*.svn"/>  
+        </copy> 
+  		<copy todir="deploy/android/www/images" >  
+        	<fileset dir="war/images" excludes="**/*.svn,114.png,144.png,57.png,64.png"/>  
+        </copy> 
+ 		<copy todir="deploy/android/www/js" >  
+        	<fileset dir="war/js" excludes="**/*.svn,cordova-ios.js,cordova-blackberry.js"/>  
+        </copy>        	       			
+ 		<copy file="war/index.html" todir="deploy/android/www/"/>		
+	</target>
+	
+	<!-- Build BlackBerry application -->
+	<target name="build-blackberry">    
+	   <delete>
+   			<fileset dir="deploy/blackberry">
+      			<include name="**/*"/>
+   			</fileset>
+		</delete>    
+	   	<mkdir dir="deploy/blackberry/www/css" />
+	    <mkdir dir="deploy/blackberry/www/cyclos" />
+	    <mkdir dir="deploy/blackberry/www/images" />
+	    <mkdir dir="deploy/blackberry/www/js" />	    
+	    <copy todir="deploy/blackberry/www/css" >  
+        	<fileset dir="war/css" excludes="**/*.svn"/>  
+        </copy>
+        <copy todir="deploy/blackberry/www/cyclos" >  
+        	<fileset dir="war/cyclos" excludes="**/*.svn"/>  
+        </copy> 
+  		<copy todir="deploy/blackberry/www/images" >  
+        	<fileset dir="war/images" excludes="**/*.svn,114.png,144.png,32.png,48.png,57.png,64.png,96.png"/>  
+        </copy>           	 
+ 		<copy todir="deploy/blackberry/www/js" >  
+        	<fileset dir="war/js" excludes="**/*.svn,cordova-android.js,cordova-ios.js"/>  
+        </copy>        	       			
+ 		<copy file="war/index.html" todir="deploy/blackberry/www/"/> 			
+	</target>
+	
+	<!-- Build IOS application -->
+	<target name="build-ios">    
+	   <delete>
+   			<fileset dir="deploy/ios">
+      			<include name="**/*"/>
+   			</fileset>
+		</delete>    
+	   	<mkdir dir="deploy/ios/www/css" />
+	    <mkdir dir="deploy/ios/www/cyclos" />
+	    <mkdir dir="deploy/ios/www/images" />
+	    <mkdir dir="deploy/ios/www/js" />	    
+	    <copy todir="deploy/ios/www/css" >  
+        	<fileset dir="war/css" excludes="**/*.svn"/>  
+        </copy>
+        <copy todir="deploy/ios/www/cyclos" >  
+        	<fileset dir="war/cyclos" excludes="**/*.svn"/>  
+        </copy> 
+  		<copy todir="deploy/ios/www/images" >  
+        	<fileset dir="war/images" excludes="**/*.svn,32.png,48.png,96.png,64.png"/>  
+        </copy>           	 
+ 		<copy todir="deploy/ios/www/js" >  
+        	<fileset dir="war/js" excludes="**/*.svn,cordova-android.js,cordova-blackberry.js"/>  
+        </copy>        	       			
+ 		<copy file="war/index.html" todir="deploy/ios/www/"/> 			
+	</target>
+	
+	<!-- Build and deploy application to Android Project -->
+	<target name="deploy-android" depends="build-android">	  
+	     <delete>
+   			<fileset dir="../cyclos3_mobile_android/assets/www">
+      			<include name="**/*"/>
+   			</fileset>
+		</delete>   	   	    	    	    
+	    <copy todir="../cyclos3_mobile_android/assets/www" >  
+        	<fileset dir="deploy/android/www" excludes="**/*.svn"/>  
+        </copy>      		
+	</target>
+	
+	<!-- Print available variables paths for task development -->
+	<target name="echo-variables">
+		<echo message="The operating system is: ${os.name}"/>  		
+		<!-- absolute path of the project. -->
+		<echo message="The home path is: ${basedir}"/>		
+		<!-- absolute path of the build file. -->
+		<echo message="The file name is: ${ant.file}"/>		
+		<!-- root directory of ant. -->
+		<echo message="The Project name is: ${ant.project.name}"/>
+		<echo message="The Ant home directory is: ${ant.home}"/>
+		<echo message="The Ant version is: ${ant.version}"/> 
+		<echo message="The Java version is: ${ant.java.version}"/>		
+		<!-- System properties. -->
+		<echo message="The Java home directory is: ${java.home}"/>
+		<echo message="The User home directory is: ${user.home}"/>
+		<echo message="The User name is: ${user.name}"/>
+	</target>
+</project>

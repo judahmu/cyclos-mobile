@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns	= "http://www.w3.org/ns/widgets"
+	xmlns:gap	= "http://phonegap.com/ns/1.0"
+	id			= "nl.strohalm.cyclos"
+	version 	= "1.1.0"
+	versionCode = "2">
+	
+    <!-- Essential Properties -->
+	<name>Cyclos</name>
+	
+	<description>
+		Mobile phone application for Cyclos
+	</description>
+
+	<author href="http://www.cyclos.org"
+			email="info@cyclos.org">
+			Social Trade Organisation
+	</author>
+	
+	<!--  Preferences -->
+	<preference name="fullscreen" value="true" />
+	<preference name="stay-in-webview" value="true" />
+	<preference name="webviewbounce" value="false" />
+	<preference name="prerendered-icon" value="true" />
+	
+	<!-- Other Stuff -->
+	<icon src="icon.png" gap:role="default" />	
+	<icon src="images/57.png" gap:platform="ios" width="57" height="57" />
+	<icon src="images/72.png" gap:platform="ios" width="72" height="72" />
+	<icon src="images/114.png" gap:platform="ios" width="114" height="114" />	
+	<icon src="images/32.png" gap:platform="android" gap:density="ldpi" />
+	<icon src="images/48.png" gap:platform="android" gap:density="mdpi" />
+	<icon src="images/72.png" gap:platform="android" gap:density="hdpi" />
+	<icon src="images/96.png" gap:platform="android" gap:density="xdpi" />	
+	<icon src="images/114.png" gap:platform="blackberry" />	
+	<icon src="images/64.png" gap:platform="winphone" />	
+	<icon src="images/64.png" gap:platform="webos" />
+	
+	<preference name="permissions" value="none"/>
+
+</widget>
